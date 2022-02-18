@@ -31,7 +31,7 @@ class Task:
     def make_multiply(self):
         randn = random.randint(1, 100)
         fln = float(str(self.first) + "." + str(self.second))
-        if finn <= 0:
+        if fin <= 0:
             raise ValueError()
         c = fln * randn
         print("Случайное число - ", randn)
