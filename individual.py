@@ -28,7 +28,7 @@ class Task:
         print(f"Число с плавающей точкой {self.first}.{self.second}")
 
 
-    def multiply(self):
+    def make_multiply(self):
         randn = random.randint(1, 100)
         fln = float(str(self.first) + "." + str(self.second))
         c = fln * randn
@@ -40,4 +40,4 @@ if __name__ == '__main__':
     newTask = Task(12, 5)
     newTask.read()
     newTask.display()
-    newTask.multiply()
+    newTask.make_multiply()
