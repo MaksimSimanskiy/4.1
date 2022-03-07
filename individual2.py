@@ -11,13 +11,11 @@
 
 class Money:
 
-
     def __init__(self, rub=0, kop=0):
         self.rub = int(rub)
         self.kop = int(kop)
         if (self.rub < 0) or (self.kop < 0):
             raise ValueError()
-
 
     def read(self):
         self.rub = input("Введите количество рублей ")
@@ -26,7 +24,6 @@ class Money:
     def display(self):
         print(f"Сумма -  {self.rub},{self.kop} рублей")
 
-    
     def add(self, rhs):
         if isinstance(rhs, Money):
             a1 = float(str(self.rub) + "." + str(self.kop))
