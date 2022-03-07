@@ -31,15 +31,17 @@ class Rational:
 
 
 def make_rational(first, second):
-    num = Rational(first, second)
-    if (first <= 0) or (second <= 0):
+    if second <= 0:
         raise ValueError()
     else:
-        return num.display()
+        return Rational(first, second)
 
 
 if __name__ == '__main__':
     newTask = Rational(12, 55)
     newTask.display()
     newTask.multiply(5)
-    make_rational(45, 34)
+    task = make_rational(45, 34)
+    task.display()
+    task.multiply(15)
+    
