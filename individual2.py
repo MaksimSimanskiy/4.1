@@ -28,7 +28,7 @@ class Money:
         if isinstance(rhs, Money):
             a1 = float(str(self.rub) + "." + str(self.kop))
             a2 = float(str(rhs.rub) + "." + str(rhs.kop))
-            return print(a1 + a2, "рублей в сумме")
+            return Monye(a1, a2)
         else:
             raise ValueError()
         # Вычитание
@@ -37,7 +37,7 @@ class Money:
         if isinstance(rhs, Money):
             a1 = float(str(self.rub) + "." + str(self.kop))
             a2 = float(str(rhs.rub) + "." + str(rhs.kop))
-            return print(round(abs(a1 - a2), 2), " - разница между 2 суммами")
+            return Money(a1, a2)
         else:
             raise ValueError()
 
@@ -47,14 +47,14 @@ class Money:
         parts = list(map(int, frc.split('/', maxsplit=1)))
         a1 = float(str(self.rub) + "." + str(self.kop))
         a2 = (a1 * int(parts[0]))/int(parts[1])
-        return print("Результат умножения на дробь", round(a2, 2))
+        return Money(a1, a2)
 
         # Деление
     def div(self, rhs):
         if isinstance(rhs, Money):
             a1 = float(str(self.rub) + "." + str(self.kop))
             a2 = float(str(rhs.rub) + "." + str(rhs.kop))
-            return print("Результат деления - ", round(a1 / a2, 2))
+            return Money(a1, a2)
         else:
             raise ValueError()
 
@@ -77,8 +77,8 @@ if __name__ == '__main__':
     r2 = Money()
     r2.read()
     r2.display()
-    r3 = r2.add(r1)
-    r4 = r2.sub(r1)
-    r5 = r2.div(r1)
-    r6 = r2.mul()
+    r3 = r2.add(r1).display()
+    r4 = r2.sub(r1).display()
+    r5 = r2.div(r1).display()
+    r6 = r2.mul().display()
     r7 = r2.compare(r1)
